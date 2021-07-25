@@ -1,0 +1,289 @@
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+img{vertical-align: top;}
+
+.wrap{
+    margin: 0 auto;
+    /* width: 900px; */
+    /* 盡量不要設寬度，以便讓網頁自適應，要設寬度就在子容器內 */
+}
+
+.clickBox{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(51, 51, 51, 0.7);;
+    /* 因為click已使用relative故沒辦法用Absolutely固定在右邊，所以加入另一個區塊後
+    使用flex -between
+    而不使用flex-row反面則是因為會有BUG*/
+}
+
+.click{
+    margin-right: 16.5px;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(51, 51, 51, 0.7);;
+    border: 1px solid rgb(8, 112, 4);
+}
+
+.click .one{
+    position: absolute;
+    bottom: 25px;
+    left: 5px;
+    width: 40px;
+    height: 2.5px;
+    background-color: white;
+    transform: rotate(30deg);
+    transition: all 0.2s;
+} 
+
+.click .two{
+    position: absolute;
+    bottom: 25px;
+    left: 5px;
+    width: 40px;
+    height: 2px;
+    background-color: white;
+    transform: rotate(-30deg);
+    transition: all 0.2s;
+} 
+
+/* 收合 */
+.clickB{
+    margin-right: 16.5px;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(51, 51, 51, 0.7);;
+    border: 1px solid rgb(8, 112, 4);
+}
+
+.oneC{
+    position: absolute;
+    bottom: 30px;
+    /* 原30px */
+    left: 5px;
+    width: 40px;
+    height: 2.5px;
+    background-color: white;
+    transform: rotate(0deg);
+    transition: all 0.2s;
+}
+
+.twoC{
+    position: absolute;
+    bottom: 20px;
+    /* 原20px */
+    left: 5px;
+    width: 40px;
+    height: 2px;
+    background-color: white;
+    transform: rotate(0deg);
+    transition: all 0.2s;
+}
+/* 展開 */
+
+.nav{
+    display: none;
+    position: fixed;
+    z-index: 99;
+}
+
+.nav .box{
+    overflow: hidden;
+}
+
+
+.nav .box .PhNone{
+    position: relative;
+    bottom: 0px;
+    transition: all 0.5s;
+}
+
+.nav .box .Ph{
+    position: relative;
+    transition: all 0.5s;
+    bottom: 180px;
+}
+
+.nav .box li a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: gray;
+}
+/* 手機選單 */
+
+
+
+.notPh ul{
+    position: relative;
+    display: flex;
+    padding: 5.2px;
+    flex-direction: row-reverse;
+    background-color: rgba(51, 51, 51, 0.7);
+}
+
+.notPh img{
+    position: absolute;
+    left: 0;
+}
+
+.notPh ul a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #FFFFB5;
+}
+
+
+
+.content img{
+    width: 100%;
+}
+
+.content ul{
+    position: relative;
+    top: -100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.content li:nth-child(1){
+    /* padding:70px 90px; */
+    padding: 10%;
+    height: 120px;
+    background-blend-mode: multiply;
+    background: url('https://icguanyu.github.io/sweetaste/img/topic_1.jpg') rgba(51, 51, 51, 0.5); 
+    background-size: cover;
+    writing-mode: vertical-lr;
+}
+
+.content li:nth-child(2){
+    /* padding: 70px 90px; */
+    padding: 10%;
+    background-blend-mode: multiply;
+    background: url('https://icguanyu.github.io/sweetaste/img/topic_2.jpg') rgba(51, 51, 51, 0.5); 
+    background-size: cover;
+    writing-mode: vertical-lr;
+}
+
+.content li:nth-child(3){
+    /* padding: 70px 90px; */
+    padding: 10%;
+    background-blend-mode: multiply;
+    background: url('https://icguanyu.github.io/sweetaste/img/topic_3.jpg') rgba(51, 51, 51, 0.5); 
+    background-size: cover;
+    writing-mode: vertical-lr;
+}
+
+.content a{
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.main{
+    display: flex;
+    margin: 0 auto;
+    padding:50px 20px;
+    height: 300px;
+    color: #8da291;
+    background-color: #eaf0ed;
+}
+
+.main p{
+    writing-mode: vertical-lr;
+    margin: 0 30px;
+    line-height: 1.7;
+}
+main h1{
+    writing-mode: vertical-lr;
+}
+
+.main img{
+    position: relative;
+    top: -60px;
+    margin:0 30px;
+    width: 400px;
+    height: 420px;
+}
+.main .title{
+    position: relative;
+    bottom: 30px;
+    font-size: 40px;
+    color: #3f5d45;
+}
+
+.footer{
+    margin-top: 100px;
+    padding: 30px;
+    color: white;
+    background-color: rgba(51, 51, 51, 0.5);
+}
+
+@media (max-width:910px) {
+
+    .nav{
+        display: block;
+    }
+    .notPh{
+        display: none;
+    }
+    .content{
+        padding-top: 52px;
+    }
+    
+}
+
+@media (max-width:760px) {
+
+    .main img{
+        display: none;
+    }
+    .main p{
+        margin: 0 60px;
+    }
+    
+}
+
+@media (max-width:640px) {
+
+    .main p{
+        margin: 0 45px;
+    }
+    
+}
+
+
+@media (max-width:500px) {
+
+    .main p{
+        margin: 0 30px;
+    }
+    
+}
+
+
+
+@media (max-width:420px) {
+
+    .main p{
+        margin: 0 20px;
+    }
+    
+}
+
+
+@media (max-width:360px) {
+
+    .main p{
+        margin: 0 15px;
+    }
+    
+}
